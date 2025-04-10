@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.input-area {
+    margin-bottom: 20px;
+    color: white;
+}
+
+.input-area label {
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.input-area input {
+    padding: 12px;
+    font-size: 18px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.input-area select {
+    padding: 12px;
+    font-size: 18px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    width: 160px;
+}
+
+.controls {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.controls button {
+    padding: 12px 25px;
+    font-size: 16px;
+    background-color: #f5a623;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.controls button:hover {
+    background-color: #ff6f61;
+}
+
+.timer {
+    width: 500px;  
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: conic-gradient(#ff6f61, #f5a623, #ff6f61);
+    position: relative;
+    margin: 0 auto; 
+    font-size: 5rem !important;
+}
+
+.timer-value {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.party-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 100;
+    display: none;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.party-animation.party-active {
+    display: block;
+    animation: fadeOut 1s ease-in-out 4s forwards;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    animation: fly 5s linear forwards;
+}
+
+@keyframes fly {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+.confetti:nth-child(3n) {
+    background-color: #ff6f61;
+}
+.confetti:nth-child(3n+1) {
+    background-color: #f5a623;
+}
+.confetti:nth-child(3n+2) {
+    background-color: #8b58f0;
+}
+
+.party-text {
+    font-size: 50px;
+    font-weight: bold;
+    color: #fffc00;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: fadeInOut 5s ease-in-out;
+    z-index: 101;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; }
+}
